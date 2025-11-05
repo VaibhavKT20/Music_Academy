@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
-import { cn } from "@/utlis/cn";
+import { cn } from "@/utils/cn";
 import Link from "next/link";
 
 function Navbar({ className }: { className?: string }) {
@@ -9,7 +9,10 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 text-center max-w-2xl mx-auto z-50",
+        // new visual styling only — logic unchanged
+        "fixed top-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-4xl z-50",
+        "rounded-2xl px-4 py-3 backdrop-blur-md bg-white/8 border border-white/10 shadow-lg",
+        "transition-all duration-200",
         className
       )}
     >
@@ -21,19 +24,17 @@ function Navbar({ className }: { className?: string }) {
             item="Home"
           ></MenuItem>
         </Link>
+
         <MenuItem setActive={setActive} active={active} item="Courses">
-          <div className="flex flex-col space-y-4 text-sm">
+          <div className="mt-2 flex flex-col space-y-3 rounded-md p-3 text-sm bg-white/5 border border-white/6 min-w-[12rem]">
             <HoveredLink href="/courses">All Courses</HoveredLink>
             <HoveredLink href="/courses/basic">Basic Music Theory</HoveredLink>
-            <HoveredLink href="/courses/advance">
-              Advanced Composition
-            </HoveredLink>
+            <HoveredLink href="/courses/advance">Advanced Composition</HoveredLink>
             <HoveredLink href="/courses/songwriting">Songwriting</HoveredLink>
-            <HoveredLink href="/courses/musicproduction">
-              Music Production
-            </HoveredLink>
+            <HoveredLink href="/courses/musicproduction">Music Production</HoveredLink>
           </div>
         </MenuItem>
+
         <Link href={"/webinars"}>
           <MenuItem
             setActive={setActive}
@@ -41,6 +42,7 @@ function Navbar({ className }: { className?: string }) {
             item="Webinars"
           ></MenuItem>
         </Link>
+
         <Link href={"/contact"}>
           <MenuItem
             setActive={setActive}
