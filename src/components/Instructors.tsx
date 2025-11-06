@@ -58,21 +58,33 @@ const instructors = [
   },
 ];
 
+
 function Instructors() {
   return (
-    <div className="relative h-[40rem] overflow-hidden flex items-center justify-center">
-      <WavyBackground className="w-full max-w-7xl mx-auto pb-40 flex flex-col items-center justify-center h-full">
-        <h2 className="text-2xl md:text-4xl lg:text-7xl text-white font-bold text-center mb-8">
-          Meet Our Instructors
+    <div className="relative flex items-center justify-center h-[45rem] overflow-hidden bg-gradient-to-b from-[#0f0f1c] via-[#1b1b2e] to-[#0f0f1c]">
+      {/* Wavy overlay */}
+      <WavyBackground className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full pb-40 relative z-10 text-center">
+        
+        {/* Section Heading */}
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-violet-400 to-indigo-400 drop-shadow-lg mb-6">
+          Meet the Maestros
         </h2>
-        <p className="text-base md:text-lg text-white text-center mb-4">
-          Discover the talented professionals who will guide your musical
-          journey
+
+        {/* Subheading */}
+        <p className="text-neutral-300 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+          Our instructors are award-winning artists, producers, and performers
+          who’ve graced global stages and studios. Learn directly from the
+          creative minds shaping today’s music world.
         </p>
-        <div className="flex flex-row items-center justify-center mb-10 w-full">
+
+        {/* Instructors Tooltip Section */}
+        <div className="flex flex-row items-center justify-center w-full">
           <AnimatedTooltip items={instructors} />
         </div>
       </WavyBackground>
+
+      {/* Decorative glow aura */}
+      <div className="absolute bottom-[-6rem] left-1/2 -translate-x-1/2 w-[30rem] h-[30rem] bg-pink-500/10 blur-[100px] rounded-full" />
     </div>
   );
 }
