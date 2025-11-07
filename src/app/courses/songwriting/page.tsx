@@ -20,37 +20,60 @@ function SongWriting() {
   const songWritingCourse = courseData.courses.filter(
     (course: Course) => course.courseType === "songwrite"
   );
-  return (
-    <div>
-      <div className="min-h-screen bg-black py-12 pt-36 bg-dot-white/[0.3]">
-        <h1 className="text-xl md:text-6xl text-center font-sans font-bold mb-20 text-white">
-          Songwriting Courses ({songWritingCourse.length})
-        </h1>
-        <div className="grid grid-cols-1 sm:grid-col-2 lg:grid-cols-3 gap-8 justify-center items-center px-8">
-          {songWritingCourse.map((course: Course) => (
-            <div key={course.id} className="flex justify-center items-center">
-              <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-                <Image
-                  src={course.image}
-                  alt="jordans"
-                  height="400"
-                  width="400"
-                  className="object-contain rounded-md"
-                  placeholder="empty"
-                />
-                <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
-                  {course.title}
-                </p>
 
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  {course.description}
-                </p>
-                <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-                  <span>Enroll now </span>
-                  <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                    ${course.price}
-                  </span>
-                </button>
+  return (
+    <div className="min-h-screen py-20 pt-44 md:pt-48 bg-gradient-to-b from-[#0f0f1c] via-[#1b1b2e] to-[#0f0f1c]">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <header className="text-center mb-12">
+          <h1 className="text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-violet-400 to-indigo-400">
+            Songwriting Mastery
+          </h1>
+          <p className="mt-4 text-neutral-400 max-w-2xl mx-auto">
+            {`Transform your thoughts into melodies with ${songWritingCourse.length} immersive songwriting courses. 
+            Learn to craft meaningful lyrics, build emotional narratives, and shape your voice into unforgettable songs.`}
+          </p>
+        </header>
+
+        {/* Songwriting Courses Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {songWritingCourse.map((course: Course) => (
+            <div key={course.id} className="flex justify-center">
+              <BackgroundGradient className="w-full max-w-sm rounded-3xl p-6 backdrop-blur-md bg-white/5 border border-white/6 shadow-lg hover:shadow-violet-600/20 transition-transform duration-300 hover:-translate-y-2">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-full h-44 overflow-hidden rounded-xl">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      height={400}
+                      width={600}
+                      placeholder="empty"
+                      className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-semibold text-white">
+                    {course.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm text-neutral-300 leading-relaxed">
+                    {course.description}
+                  </p>
+
+                  <div className="mt-6 flex items-center gap-3">
+                    <button className="px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500 text-white shadow-md hover:-translate-y-1 transition">
+                      Enroll Today
+                    </button>
+
+                    <div className="text-sm text-neutral-400 px-3 py-1 rounded-full bg-white/3">
+                      {`Price • ₹${course.price}`}
+                    </div>
+                  </div>
+
+                  <p className="mt-4 text-xs text-neutral-500">
+                    Learn lyricism • Melody crafting • Creative storytelling
+                  </p>
+                </div>
               </BackgroundGradient>
             </div>
           ))}
