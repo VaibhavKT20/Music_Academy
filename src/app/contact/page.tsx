@@ -22,10 +22,10 @@ function MusicSchoolContactUs() {
         {/* Compact header — sized down so it doesn't push content */}
         <header className="text-center mb-6">
           <h1 className="text-2xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-violet-400 to-indigo-400">
-            Reach Out — We’re Listening
+            Reach Out — We&apos;re Listening
           </h1>
           <p className="mt-2 text-sm md:text-base text-neutral-400 max-w-lg mx-auto">
-            Questions about classes, schedules, or custom programs? Send a short message and we’ll get back to you within 24–48 hours.
+            Questions about classes, schedules, or custom programs? Send a short message and we&apos;ll get back to you within 24–48 hours.
           </p>
         </header>
 
@@ -85,7 +85,7 @@ function MusicSchoolContactUs() {
             {/* Button row placed below fields, aligned right on wide screens */}
             <div className="flex items-center justify-between gap-4">
               <div className="text-xs text-neutral-400">
-                Prefer a call? Write "CALL" in the message with your timezone.
+                Prefer a call? Write &quot;CALL&quot; in the message with your timezone.
               </div>
 
               <div className="ml-auto">
